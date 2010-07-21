@@ -11,14 +11,14 @@ CFLAGS = \
 CPPFLAGS = \
 	-I. \
 
-BIN   =  ./bin/ethernetz
+BIN   =  ./bin/ethernetz_$(shell uname -m)
 
 OBJS  = \
 	src/main.o
 
 
 all: $(BIN)
-	$(BIN)
+	cd `dirname $(BIN)`; ln -s `basename $(BIN)` ethernetz; cd -; $(BIN) eth0
 
 $(BIN): $(OBJS)
 	$(CC) $(CFLAGS) $(CPPFLAGS) -o $@ $(OBJS) $(LFLAGS)
