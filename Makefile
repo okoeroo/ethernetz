@@ -5,8 +5,7 @@ CC = gcc
 CFLAGS = \
     -Wcast-qual -Wchar-subscripts -Winline \
     -Wmissing-prototypes -Wnested-externs -Wpointer-arith \
-    -O3 -msse4a -march=core2 -mtune=core2 \
-    --arch=x86_64
+    -O3 -mtune=core2 
 
 
 CPPFLAGS = \
